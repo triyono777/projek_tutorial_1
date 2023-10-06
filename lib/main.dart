@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'contoh_stateles_widget.dart';
+import 'beranda_restoran.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Projek Pertama',
-      home: ContohStateLessWidget(),
+      home: BerandaRestoran(),
     );
   }
 }
