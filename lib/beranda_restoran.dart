@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projek_tutorial_1/halaman_detail_produk.dart';
 
 class BerandaRestoran extends StatelessWidget {
   const BerandaRestoran({super.key});
@@ -42,13 +43,29 @@ class BerandaRestoran extends StatelessWidget {
                   Text('Rp 50.000'),
                 ],
               ),
-              Column(
-                children: <Widget>[
-                  Image.network('https://demo-asset.jatendev.com/gambar/4.png',
-                      width: 80, height: 80),
-                  Text('Makanan 2'),
-                  Text('Rp 60.000'),
-                ],
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => HalamanDetailProduk(
+                        gambarProduk:
+                            "https://demo-asset.jatendev.com/gambar/4.png",
+                        namaProduk: "Makanan 2",
+                      ),
+                    ),
+                  );
+                },
+                child: Column(
+                  children: <Widget>[
+                    Image.network(
+                        'https://demo-asset.jatendev.com/gambar/4.png',
+                        width: 80,
+                        height: 80),
+                    Text('Makanan 2'),
+                    Text('Rp 60.000'),
+                  ],
+                ),
               ),
               Column(
                 children: <Widget>[
