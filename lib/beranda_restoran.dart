@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projek_tutorial_1/halaman_detail_produk.dart';
+import 'package:projek_tutorial_1/produk_widget.dart';
 
 class BerandaRestoran extends StatelessWidget {
   const BerandaRestoran({super.key});
@@ -35,70 +36,25 @@ class BerandaRestoran extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              Column(
-                children: <Widget>[
-                  Image.network('https://demo-asset.jatendev.com/gambar/3.png',
-                      width: 80, height: 80),
-                  Text('Makanan 1'),
-                  Text('Rp 50.000'),
-                ],
+              ProdukWidget(
+                gambarProduk: "https://demo-asset.jatendev.com/gambar/3.png",
+                hargaProduk: "Rp 50.000",
+                namaProduk: "Makanan 1",
               ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => HalamanDetailProduk(
-                        gambarProduk:
-                            "https://demo-asset.jatendev.com/gambar/4.png",
-                        namaProduk: "Makanan 2",
-                      ),
-                    ),
-                  );
-                },
-                child: Column(
-                  children: <Widget>[
-                    Image.network(
-                        'https://demo-asset.jatendev.com/gambar/4.png',
-                        width: 80,
-                        height: 80),
-                    Text('Makanan 2'),
-                    Text('Rp 60.000'),
-                  ],
-                ),
+              ProdukWidget(
+                gambarProduk: "https://demo-asset.jatendev.com/gambar/4.png",
+                hargaProduk: "Rp 60.000",
+                namaProduk: "Makanan 2",
               ),
-              Column(
-                children: <Widget>[
-                  Image.network('https://demo-asset.jatendev.com/gambar/5.png',
-                      width: 80, height: 80),
-                  Text('Makanan 3'),
-                  Text('Rp 55.000'),
-                ],
+              ProdukWidget(
+                gambarProduk: "https://demo-asset.jatendev.com/gambar/5.png",
+                hargaProduk: "Rp 55.000",
+                namaProduk: "Makanan 3",
               ),
-              Column(
-                children: <Widget>[
-                  Stack(
-                    clipBehavior: Clip.none,
-                    children: [
-                      Image.network(
-                          'https://demo-asset.jatendev.com/gambar/6.png',
-                          width: 80,
-                          height: 80),
-                      Positioned(
-                        top: -10,
-                        left: 0,
-                        child: Container(
-                          child: Image.network(
-                              'https://demo-asset.jatendev.com/gambar/favorit.png',
-                              width: 30,
-                              height: 30),
-                        ),
-                      )
-                    ],
-                  ),
-                  Text('Makanan 4'),
-                  Text('Rp 70.000'),
-                ],
+              ProdukWidget(
+                gambarProduk: "https://demo-asset.jatendev.com/gambar/6.png",
+                hargaProduk: "Rp 70.000",
+                namaProduk: "Makanan 4",
               ),
             ],
           ),

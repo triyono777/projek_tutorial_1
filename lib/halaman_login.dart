@@ -8,8 +8,10 @@ class HalamanLogin extends StatefulWidget {
 }
 
 class _HalamanLoginState extends State<HalamanLogin> {
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  TextEditingController emailController =
+      TextEditingController(text: "budi@email.com");
+  TextEditingController passwordController =
+      TextEditingController(text: "budi123");
 
   @override
   Widget build(BuildContext context) {
