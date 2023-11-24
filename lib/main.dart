@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'halaman_login.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:get_storage/get_storage.dart';
 
-void main() {
-  runApp(const MyApp());
+main() async {
+  await GetStorage.init();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,7 +16,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Projek Pertama',
-      home: HalamanLogin(),
+      home: AnimatedSplashScreen.withScreenFunction(
+        splash: Text('Resto Mantap'),
+        screenFunction: () async {
+          return HalamanLogin();
+        },
+        splashTransition: SplashTransition.scaleTransition,
+      ),
     );
   }
 }
