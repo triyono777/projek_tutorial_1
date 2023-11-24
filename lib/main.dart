@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'beranda_restoran.dart';
 import 'halaman_login.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:get_storage/get_storage.dart';
@@ -19,7 +20,12 @@ class MyApp extends StatelessWidget {
       home: AnimatedSplashScreen.withScreenFunction(
         splash: Text('Resto Mantap'),
         screenFunction: () async {
-          return HalamanLogin();
+          final box = GetStorage();
+          if (box.read("isLogin") == true) {
+            return BerandaRestoran();
+          } else {
+            return HalamanLogin();
+          }
         },
         splashTransition: SplashTransition.scaleTransition,
       ),

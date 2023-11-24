@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'beranda_restoran.dart';
+import 'package:get_storage/get_storage.dart';
 
 class HalamanLogin extends StatefulWidget {
   @override
@@ -50,6 +51,8 @@ class _HalamanLoginState extends State<HalamanLogin> {
 // Logika untuk memeriksa login
                   if (emailController.text == "budi@email.com" &&
                       passwordController.text == "budi123") {
+                    final box = GetStorage();
+                    box.write('isLogin', true);
                     Navigator.push(
                       context,
                       MaterialPageRoute(
