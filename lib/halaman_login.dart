@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'beranda_restoran.dart';
 import 'package:get_storage/get_storage.dart';
 
+import 'page/list_page.dart';
+
 class HalamanLogin extends StatefulWidget {
   @override
   State<HalamanLogin> createState() => _HalamanLoginState();
@@ -55,8 +57,7 @@ class _HalamanLoginState extends State<HalamanLogin> {
                     box.write('isLogin', true);
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => BerandaRestoran()),
+                      MaterialPageRoute(builder: (context) => ListPage()),
                     );
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
