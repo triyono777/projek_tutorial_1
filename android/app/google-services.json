@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "827134159233",
+    "project_id": "tutorial-flutter-1",
+    "storage_bucket": "tutorial-flutter-1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827134159233:android:2c5bbdf549c0fc5c976080",
+        "android_client_info": {
+          "package_name": "dev.triyono.projek_tutorial_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCT_HqNXTOjHlxiumMgTS8vVa4ffXxTKQw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

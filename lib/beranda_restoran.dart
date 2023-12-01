@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:projek_tutorial_1/halaman_detail_produk.dart';
+import 'package:projek_tutorial_1/halaman_login.dart';
 import 'package:projek_tutorial_1/produk_widget.dart';
 
 class BerandaRestoran extends StatelessWidget {
@@ -11,6 +13,34 @@ class BerandaRestoran extends StatelessWidget {
       backgroundColor: Colors.brown[50],
       appBar: AppBar(
         title: Text('Beranda Restoran'),
+        actions: [
+          PopupMenuButton(
+// add icon, by default "3 dot" icon
+// icon: Icon(Icons.book)
+              itemBuilder: (context) {
+            return [
+              PopupMenuItem<int>(
+                value: 0,
+                child: Text("My Account"),
+              ),
+              PopupMenuItem<int>(
+                value: 1,
+                child: Text("Logout"),
+              ),
+            ];
+          }, onSelected: (value) {
+            if (value == 0) {
+              print("My account menu is selected.");
+            } else if (value == 1) {
+              final box = GetStorage();
+              box.write("isLogin", false);
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => HalamanLogin()),
+              );
+            }
+          }),
+        ],
       ),
       body: Column(
         children: <Widget>[
